@@ -12,12 +12,12 @@ class PracticeBackendStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         lambda_function = _lambda.Function(
-            self,
-            "MyLambda",
-            runtime=_lambda.Runtime.PYTHON_3_11,
-            handler="handler.lambda_handler",
-            code=_lambda.Code.from_asset("lambdas"),
-        )
+        self,
+        "MyLambda",
+        runtime=_lambda.Runtime.PYTHON_3_11,
+        handler="handler.lambda_handler",
+        code=_lambda.Code.from_asset("lambdas"),
+)
 
         apigateway.LambdaRestApi(
             self,
